@@ -19,6 +19,6 @@ class AdminMiddleware
         if (Auth::check() && Auth::user()->role == 'admin') {
             return $next($request);
         }
-        return redirect()->route('login');
+        return redirect()->route('login')->with('errorLogin','Đăng nhập thất bại');
     }
 }

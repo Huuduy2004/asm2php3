@@ -14,8 +14,9 @@ class ProductsController extends Controller
         $category=DB::table('cate')->get();
         $pr = DB::table('pr')->join('cate','cate.id','=','pr.category_id')
         ->select('pr.*','cate.name')
-        ->get();// Lấy tất cả dữ liệu từ bảng pr
+        ->take(8)->get();// Lấy tất cả dữ liệu từ bảng pr
         return view('clients.home',  compact('pr','category'));
+        
     }
     public function detail($id) {
         $category=DB::table('cate')->get();

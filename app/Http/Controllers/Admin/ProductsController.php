@@ -31,14 +31,14 @@ class ProductsController extends Controller
             'image' => 'required',
             'price' => 'required',
             'priceDel' => 'required',  
-            'name' => 'required',  
+            'category_id' => 'required',  
             ],
           [
                 'title.required' => 'Title không được để trống',
                 'image.required' => 'Image không được để trống',
                 'price.required' => 'Price không được để trống',
                 'priceDel.required' => 'priceDel không được để trống',
-                'name.required' => 'Category không được để trống',
+                'category_id.required' => 'Category không được để trống',
             ]
         );
         $data = $request->except('image');

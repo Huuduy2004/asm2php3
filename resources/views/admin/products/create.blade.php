@@ -75,7 +75,7 @@
                                             </select>
                                         </div>
 
-                                        @error('name')
+                                        @error('category_id')
                                             <span class="text-danger">
                                                 {{ $message }}
                                             </span>

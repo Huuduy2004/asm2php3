@@ -62,9 +62,15 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="box-title">Sản phẩm theo danh mục </h4>
+                            <div class="card-header d-flex justify-content-between pt-3">
+                                <strong class="card-title">Sản phẩm theo danh mục</strong>
+                                @if (session('message'))
+                                    <div class="alert alert-success">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
                             </div>
+                            
                             <div class="card-body--">
                                 <div class="table-stats order-table ov-h">
                                     <table class="table ">

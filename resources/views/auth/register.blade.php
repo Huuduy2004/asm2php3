@@ -39,27 +39,35 @@
                 <div class="login-form">
                     <form method="POST" action="{{route('postRegister')}}">
                         @csrf
-                        @if (session('message'))
-                        <div class="alert alert-succses">
-                            {{session('message')}}
-                        </div>
-                            
-                        @endif
+                       
+                      
                         <div class="form-group">
                             <label>FullName</label>
                             <input type="text" name="fullname" class="form-control" placeholder="Full Name">
+                            @error('fullname')
+                                <span style="color:red">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label>User Name</label>
                             <input type="text" name="username" class="form-control" placeholder="User Name">
+                            @error('username')
+                            <span style="color:red">{{$message}}</span>
+                        @enderror
                         </div>
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" name="email" class="form-control" placeholder="Email">
+                            @error('email')
+                                <span style="color:red">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" name="password" class="form-control" placeholder="Password">
+                            @error('password')
+                                <span style="color:red">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="checkbox">
                             <label>
